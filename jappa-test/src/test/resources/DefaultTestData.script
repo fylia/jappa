@@ -1,0 +1,2 @@
+clear recreateDatabase.sql
+fill defaultTestData.sql

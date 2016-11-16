@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.fylia</groupId>
+	<artifactId>jappa-processor</artifactId>
+	<name>JdbcTemplate Annotation Processor</name>
+	<!--description>Generates code and constants from javax.persistence annotations for use with JdbcTemplate</description -->
+	<packaging>jar</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+
+
+	<dependencies>
+		<dependency>
+		    <groupId>javax.persistence</groupId>
+		    <artifactId>persistence-api</artifactId>
+		    <version>1.0.2</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.google.testing.compile</groupId>
+		  <artifactId>compile-testing</artifactId>
+		  <version>0.8</version>
+		  <scope>test</scope>
+		</dependency>
+		<dependency>
+		  <groupId>org.fylia</groupId>
+		  <artifactId>jappa-core</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
+		  <scope>test</scope>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>4.1.5.RELEASE</version>
+		    <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>4.1.5.RELEASE</version>
+		    <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+		    <scope>test</scope>
+        </dependency>
+ 	</dependencies>
+ 	
+    <properties>
+        <java.language.version>1.8</java.language.version>
+        <java.target.version>1.8</java.target.version>
+    </properties>
+    <build>
+    	<plugins>
+		<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>${java.language.version}</source>
+				<target>${java.target.version}</target>
+				<!-- Disable annotation processing for ourselves.  --> 
+				<compilerArgument>-proc:none</compilerArgument>
+			</configuration>
+		</plugin>
+			<!-- 
+            <plugin>
+                <groupId>org.bsc.maven</groupId>
+                <artifactId>maven-processor-plugin</artifactId>
+                <version>2.2.4</version>
+                <executions>
+                    <execution>
+                        <id>process</id>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                        <phase>generate-test-sources</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/generated-test-sources/atp</outputDirectory>
+                            <processors>
+                                <processor>org.fylia.jappa.JappaProcessor</processor>
+                            </processors>
+                            <options>
+                            	<destinationPackage>org.fylia.jappa.test.dao.impl</destinationPackage>
+                            </options>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            -->
+		</plugins>
+	</build>    
+</project>

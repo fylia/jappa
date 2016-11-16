@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.fylia</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>jappa-core</artifactId>
+    <name>Jappa</name>
+    <description>JdbcTemplate Annotation Processor Persistence API core module</description>
+    <properties>
+        <java.language.version>1.8</java.language.version>
+        <java.target.version>1.8</java.target.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <licence.file>${main.basedir}/license_description_template.ftl</licence.file>
+
+        <spring.version>4.1.5.RELEASE</spring.version>
+        <license.licenseName>lgpl_v3</license.licenseName>
+        <license.organizationName>FYLIA</license.organizationName>
+        <license.projectName>FYLIA</license.projectName>
+        <license.inceptionYear>2016</license.inceptionYear>
+        <license.sectionDelimiter>==================================================</license.sectionDelimiter>
+    </properties>
+    <dependencies>
+		<dependency>
+		    <groupId>javax.persistence</groupId>
+		    <artifactId>persistence-api</artifactId>
+		    <version>1.0.2</version>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+		    <scope>provided</scope>
+        </dependency>
+        <dependency>
+		    <groupId>org.javassist</groupId>
+		    <artifactId>javassist</artifactId>
+        	<version>3.21.0-GA</version>
+        </dependency>
+    </dependencies>
+    <build>
+    	<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.language.version}</source>
+                    <target>${java.target.version}</target>
+                </configuration>
+            </plugin>
+    	</plugins>
+    </build>
+</project>
