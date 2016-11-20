@@ -18,5 +18,5 @@ The project is still in a "proof of concept" 0.0.1-SNAPSHOT stage:
 * The processor and generated code need quite some refactoring to make it more readable. 
 * There is nothing forseen to load relations
 * Everything is still subject to change.
-* but it already works and generates usefull, runnable code.
+* but **it already works and generates usefull, runnable code.**
 
