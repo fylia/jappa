@@ -68,6 +68,10 @@ public class TypeDetails {
 	public List<PropertyDetails> getAllIdDetails() {
 		return properties.values().stream().filter(PropertyDetails::isId).collect(Collectors.toList());
 	}
+	public List<PropertyDetails> getPureIdColumnDetails() {
+	    return properties.values().stream().filter(prop->prop.isId() && (!prop.isEmbedded() || prop.isNested()))
+	                .collect(Collectors.toList());
+	}
 	public PropertyDetails getIdDetails() {
 		return properties.values().stream().filter(PropertyDetails::isId).findFirst().orElse(null);
 	}

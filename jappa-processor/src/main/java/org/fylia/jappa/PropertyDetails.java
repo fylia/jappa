@@ -32,6 +32,7 @@ public class PropertyDetails {
 	private int scale;
 	private PropertyType propertyType;
 	private String referencedColumnName="";
+	private TypeDetails referenceType;
 	
 	private String typeAsString() {
 		return type.toString();
@@ -167,6 +168,12 @@ public class PropertyDetails {
 	public void setNested(boolean nested) {
 		this.nested = nested;
 	}
+	public void setReferenceType(TypeDetails referenceType) {
+        this.referenceType = referenceType;
+    }
+	public TypeDetails getReferenceType() {
+        return referenceType;
+    }
 	public void fillFromColumn(Column columnAnnotation) {
 		propertyType = PropertyType.SIMPLE;
 		columnName = columnAnnotation.name();
